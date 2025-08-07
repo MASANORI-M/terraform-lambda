@@ -2,3 +2,4 @@
 /env/dev/.terraform.lock.hcl
 /env/dev/terraform.tfstate
 /env/dev/terraform.tfstate.backup
+/modules/web/lambda/*.zip

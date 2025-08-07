@@ -22,3 +22,11 @@ module "lambda" {
   env = var.env
   lambda_name_prefix = local.lambda_name_prefix
 }
+
+module "apigateway" {
+  source = "./apigateway"
+  env = var.env
+  api_name_prefix = local.api_name_prefix
+  lambda_invoke_arn = module.lambda.lambda_arn
+  region = var.region
+}

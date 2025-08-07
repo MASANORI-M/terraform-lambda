@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "inquiry_table" {
-  name = "${var.env}-${var.db_name_prefix}"
+  name = var.db_name_prefix
   billing_mode = "PAY_PER_REQUEST"
 
   hash_key = "id"
@@ -10,7 +10,7 @@ resource "aws_dynamodb_table" "inquiry_table" {
   }
 
   tags = {
-    Name = "${var.env}-${var.db_name_prefix}"
+    Name = var.db_name_prefix
     Env = var.env
   }
 }
